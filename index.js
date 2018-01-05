@@ -2,7 +2,7 @@ let customerId = 0;
 let mealId = 0;
 let deliveryId = 0;
 let employeeId = 0;
-let store = {customers: [], meals: [], deliveries: []}
+let store = {customers: [], meals: [], deliveries: [], employees: []}
 
 class Customer {
   constructor(name, employer) {
