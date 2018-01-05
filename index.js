@@ -13,6 +13,11 @@ class Customer {
     store.customers.push(this)
   }
 
+  deliveries() {
+    return store.deliveries.filter(delivery => {
+      return delivery.customerId === this.id
+    })
+  }
 }
 
 class Meal {
@@ -30,7 +35,7 @@ class Meal {
     })
   }
 
-  deliveries(){
+  deliveries() {
     return store.deliveries.filter(delivery => {
       return delivery.mealId === this.id
     })
