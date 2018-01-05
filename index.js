@@ -111,4 +111,14 @@ class Employer {
       });
     });
   }
+
+  meals() {
+    const currentDeliveries = this.deliveries()
+
+    return store.meals.filter(meal => {
+      return currentDeliveries.some(function(el) {
+        return el.id === meal.customerId
+      });
+    });
+  }
 }
