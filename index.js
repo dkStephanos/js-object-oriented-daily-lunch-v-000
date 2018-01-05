@@ -28,6 +28,14 @@ class Customer {
       });
     });
   }
+
+  totalSpent() {
+    let customerMeals = this.meals();
+
+    return customerMeals.reduce(function(agg, el, i, arr) {
+      return agg + el.price
+    }, 0);
+  }
 }
 
 class Meal {
