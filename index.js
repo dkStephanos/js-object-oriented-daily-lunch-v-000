@@ -29,6 +29,18 @@ class Meal {
       return b.price - a.price
     })
   }
+
+  meal(){
+    return store.meals.find(function(meal){
+      return meal.id === this.mealId
+    }.bind(this))
+  }
+
+  customer(){
+    return store.customers.find(function(customer){
+      return customer.id === this.customerId
+    }.bind(this))
+  }
 }
 
 class Delivery {
