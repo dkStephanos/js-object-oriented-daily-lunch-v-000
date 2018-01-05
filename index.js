@@ -8,6 +8,8 @@ class Customer {
     this.name = name;
     this.employer = employer;
     this.id = ++customerId;
+
+    store.customers.push(this)
   }
 
 
