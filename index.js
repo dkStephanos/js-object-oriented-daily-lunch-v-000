@@ -128,8 +128,8 @@ class Employer {
     let currentDeliveries = this.deliveries();
     let count = 0;
 
-    for(var i = 0; i < currentMeals.length; i++) {
-      for(var j = 0; j < currentDeliveries.length; j++) {
+    for(var i = 0; i < currentMeals.length; ++i) {
+      for(var j = 0; j < currentDeliveries.length; ++ j) {
         if(currentMeals[i].id === currentDeliveries[j].mealId) {
           count += 1;
         }
