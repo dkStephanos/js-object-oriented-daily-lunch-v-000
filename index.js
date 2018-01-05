@@ -123,8 +123,18 @@ class Employer {
   }
 
   mealTotals() {
-    const currentMeals = this.meals();
+    let mealCounts = {};
+    let currentMeals = this.meals();
+    let currentDeliveries = this.deliveries();
+    var count = 0;
 
-    console.log(currentMeals)
+    for(var i = 0; i < currentDeliveries.length; i++) {
+
+    }
+
+    for(var i = 0; i < array.length; ++i){
+        if(array[i] == 2)
+            count++;
+    }
   }
 }
