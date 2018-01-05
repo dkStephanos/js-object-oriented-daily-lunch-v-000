@@ -104,7 +104,7 @@ class Employer {
 
   deliveries() {
     return store.deliveries.filter(delivery => {
-      return employees().some(function(el) {
+      return this.employees().some(function(el) {
         return el.customerId === delivery.customerId
       });
     });
