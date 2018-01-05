@@ -117,7 +117,7 @@ class Employer {
 
     return store.meals.filter(meal => {
       return currentDeliveries.some(function(el) {
-        return el.id === meal.customerId
+        return el.mealId === meal.id
       });
     });
   }
