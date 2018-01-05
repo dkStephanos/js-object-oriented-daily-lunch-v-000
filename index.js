@@ -103,6 +103,7 @@ class Employer {
   }
 
   deliveries() {
+    console.log(this)
     const currentEmployees = this.employees()
 
     return store.deliveries.filter(delivery => {
