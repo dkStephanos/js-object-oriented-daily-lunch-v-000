@@ -122,5 +122,22 @@ class Employer {
     });
   }
 
+  mealTotals() {
+    let mealCounts = {};
+    let currentMeals = this.meals();
+    let currentDeliveries = this.deliveries();
+    let count = 0;
 
+    for(var i = 0; i < currentMeals.length; i++) {
+      for(var j = 0; j < currentDeliveries.length; j++) {
+        if(currentMeals[i].id === currentDeliveries[j].mealId) {
+          count += 1;
+        }
+      }
+      mealCounts = Object.assign(mealCounts, {currentMeals[i].id: count});
+      count = 0;
+    }
+
+    return mealCounts
+  }
 }
