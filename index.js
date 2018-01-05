@@ -122,7 +122,7 @@ class Employer {
     });
   }
 
-  employerStats() {
+  mealStats() {
     const currentMeals = this.meals();
 
     console.log(currentMeals)
