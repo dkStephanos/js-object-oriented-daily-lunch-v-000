@@ -10,12 +10,12 @@ class Customer {
     this.employer = employer;
     this.id = ++customerId;
 
-    store.customers.push(this)
+    store.customers.push(this);
   }
 
   deliveries() {
     return store.deliveries.filter(delivery => {
-      return delivery.customerId === this.id
+      return delivery.customerId === this.id;
     })
   }
 
@@ -24,7 +24,7 @@ class Customer {
 
     return store.meals.filter(meal => {
       return customerDeliveries.some(function(el) {
-        return el.mealId === meal.id
+        return el.mealId === meal.id;
       });
     });
   }
@@ -36,18 +36,18 @@ class Meal {
     this.price = price;
     this.id = ++mealId;
 
-    store.meals.push(this)
+    store.meals.push(this);
   }
 
   static byPrice() {
     return store.meals.sort(function(a, b) {
-      return b.price - a.price
+      return b.price - a.price;
     })
   }
 
   deliveries() {
     return store.deliveries.filter(delivery => {
-      return delivery.mealId === this.id
+      return delivery.mealId === this.id;
     })
   }
 
@@ -56,7 +56,7 @@ class Meal {
 
     return store.customers.filter(customer => {
       return mealDeliveries.some(function(el) {
-        return el.customerId === customer.id
+        return el.customerId === customer.id;
       });
     });
   }
@@ -72,18 +72,18 @@ class Delivery {
     }
     this.id = ++deliveryId;
 
-    store.deliveries.push(this)
+    store.deliveries.push(this);
   }
 
   meal(){
     return store.meals.find(function(meal){
-      return meal.id === this.mealId
+      return meal.id === this.mealId;
     }.bind(this))
   }
 
   customer(){
     return store.customers.find(function(customer){
-      return customer.id === this.customerId
+      return customer.id === this.customerId;
     }.bind(this))
   }
 }
@@ -93,32 +93,38 @@ class Employer {
     this.name = name;
     this.id = ++employerId;
 
-    store.employers.push(this)
+    store.employers.push(this);
   }
 
   employees() {
     return store.customers.filter(employee => {
-      return employee.employer === this
+      return employee.employer === this;
     })
   }
 
   deliveries() {
-    const currentEmployees = this.employees()
+    const currentEmployees = this.employees();
 
     return store.deliveries.filter(delivery => {
       return currentEmployees.some(function(el) {
-        return el.id === delivery.customerId
+        return el.id === delivery.customerId;
       });
     });
   }
 
   meals() {
-    const currentDeliveries = this.deliveries()
+    const currentDeliveries = this.deliveries();
 
     return store.meals.filter(meal => {
       return currentDeliveries.some(function(el) {
-        return el.mealId === meal.id
+        return el.mealId === meal.id;
       });
     });
+  }
+
+  employerStats() {
+    const currentMeals = this.meals();
+
+    console.log(currentMeals)
   }
 }
