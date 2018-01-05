@@ -41,3 +41,10 @@ class Delivery {
     store.deliveries.push(this)
   }
 }
+
+class Employer {
+  constructor(name) {
+    this.name = name;
+    this.id = ++employerId;
+  }
+}
