@@ -13,11 +13,6 @@ class Customer {
     store.customers.push(this)
   }
 
-
-
-  static function totalSpent() {
-
-  }
 }
 
 class Meal {
