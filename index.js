@@ -35,6 +35,16 @@ class Meal {
       return delivery.mealId === this.id
     })
   }
+
+  customers() {
+    let mealDeliveries = this.deliveries();
+
+    return store.customers.filter(customer => {
+      return mealDeliveries.some(function(el) {
+        return el.customerId === customer.id
+      });
+    });
+  }
 }
 
 class Delivery {
