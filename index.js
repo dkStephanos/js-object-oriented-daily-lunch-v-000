@@ -95,4 +95,20 @@ class Employer {
 
     store.employers.push(this)
   }
+
+  employees() {
+    return store.employees.filter(employee => {
+      return employee.employerId === this.id
+    })
+  }
+
+  customers() {
+    let mealDeliveries = this.deliveries();
+
+    return store.customers.filter(customer => {
+      return mealDeliveries.some(function(el) {
+        return el.customerId === customer.id
+      });
+    });
+  }
 }
