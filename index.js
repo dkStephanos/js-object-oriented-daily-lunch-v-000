@@ -18,6 +18,16 @@ class Customer {
       return delivery.customerId === this.id
     })
   }
+
+  meals() {
+    let customerDeliveries = this.deliveries();
+
+    return store.meals.filter(meal => {
+      return customerDeliveries.some(function(el) {
+        return el.mealId === meal.id
+      });
+    });
+  }
 }
 
 class Meal {
