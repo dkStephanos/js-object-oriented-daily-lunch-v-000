@@ -126,7 +126,7 @@ class Employer {
     let mealCounts = {};
     let currentMeals = this.meals();
     let currentDeliveries = this.deliveries();
-    var count = 0;
+    let count = 0;
 
     for(var i = 0; i < currentMeals.length; i++) {
       for(var j = 0; j < currentDeliveries.length; j++) {
