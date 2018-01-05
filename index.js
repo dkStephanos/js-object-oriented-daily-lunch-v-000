@@ -134,6 +134,7 @@ class Employer {
           count += 1;
         }
       }
+      mealCounts = Object.assign(mealCounts, {currentMeals[i].id: count});
       count = 0;
     }
 
