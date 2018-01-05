@@ -102,12 +102,10 @@ class Employer {
     })
   }
 
-  customers() {
-    let mealDeliveries = this.deliveries();
-
-    return store.customers.filter(customer => {
-      return mealDeliveries.some(function(el) {
-        return el.customerId === customer.id
+  deliveries() {
+    return store.deliveries.filter(delivery => {
+      return emplyees().some(function(el) {
+        return el.customerId === delivery.customerId
       });
     });
   }
