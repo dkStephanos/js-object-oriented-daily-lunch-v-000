@@ -107,6 +107,7 @@ class Employer {
 
     return store.deliveries.filter(delivery => {
       return currentEmployees.some(function(el) {
+        console.log(el)
         return el.customerId === delivery.customerId
       });
     });
